@@ -33,6 +33,11 @@ function App() {
   const onDelete = (id) => {
     dispatch({type:'DELETE_POST', payload: id});
   }
+
+  const sortPosts =  (event) => {
+    event.preventDefault();
+    dispatch({type:'SORT_POSTS', payload: ((a, b) => a.title > b.title ? 1 : -1)});
+  }
   
   return (
     <div className="App">
@@ -41,6 +46,7 @@ function App() {
         <input type={'text'} value={post.title} onChange={(event)=> setPost({...post, title: event.target.value})}/>
         <input type={'text'} value={post.body}  onChange={(event)=> setPost({...post, body: event.target.value})}/>
         <button onClick={addpost}>add post</button>
+        <button onClick={sortPosts}>sort by title</button>
       </form>
       <List 
         posts={posts} 
