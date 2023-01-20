@@ -1,4 +1,5 @@
 import React from 'react'
+import './list.css';
 
 const ListItem = ({id, title, body, onDelete}) => {
     const handleDelete = () => {
@@ -10,7 +11,7 @@ const ListItem = ({id, title, body, onDelete}) => {
     <li key={id} id={id} className='list-item'>
         <h3>{title}</h3>
         <p className='description'>{body}</p>
-        <button onClick={handleDelete}>delete</button>
+        <button className='delete-button' onClick={handleDelete}>delete</button>
     </li>
   )
 }

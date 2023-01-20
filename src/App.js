@@ -13,7 +13,7 @@ function App() {
   }, [dispatch]);
 
   const fetchData = async () => {
-    await fetch("https://jsonplaceholder.typicode.com/posts?_limit=2")
+    await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
       .then((response) => response.json())
       .then((result) => dispatch({type: 'GET_POSTS', payload: result}))
       .catch((error) => console.log(error));
@@ -36,7 +36,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <h1>LIT test task</h1>
       <form>
         <input type={'text'} value={post.title} onChange={(event)=> setPost({...post, title: event.target.value})}/>
         <input type={'text'} value={post.body}  onChange={(event)=> setPost({...post, body: event.target.value})}/>
