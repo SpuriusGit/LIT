@@ -12,6 +12,7 @@ const ListItem = ({id, title, body, onDelete}) => {
         <h3>{title}</h3>
         <p className='description'>{body}</p>
         <button className='delete-button' onClick={handleDelete}>delete</button>
+        <button className='update-button'>edit</button>
     </li>
   )
 }

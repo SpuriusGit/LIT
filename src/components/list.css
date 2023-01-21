@@ -9,10 +9,11 @@
     position: relative;
 }
 
-.delete-button {
+.delete-button,
+.update-button {
     width: 100px;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 30px);
     right: 20px;
 
     background-color: aqua;
@@ -22,4 +23,8 @@
 
     cursor: pointer;
     font-size: 16px;
+}
+
+.update-button {
+    top: calc(50% + 10px);
 }
