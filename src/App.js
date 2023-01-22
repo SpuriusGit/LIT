@@ -52,13 +52,13 @@ function App() {
   return (
     <div className="App">
       <h1>LIT test task</h1>
-      <form>
+      <form className='post-form'>
         <input type={'text'} value={post.title} onChange={(event)=> setPost({...post, title: event.target.value})} placeholder="title"/>
         <input type={'text'} value={post.body}  onChange={(event)=> setPost({...post, body: event.target.value})} placeholder="description"/>
         <input type={'text'} value={search}  onChange={handleSearch} placeholder="search..."/>
         <button onClick={addpost}>add post</button>
-        <SortSelect />
       </form>
+      <SortSelect />
       <List 
         posts={posts} 
         onDelete={onDelete}

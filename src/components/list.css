@@ -8,23 +8,3 @@
     text-align: left;
     position: relative;
 }
-
-.delete-button,
-.update-button {
-    width: 100px;
-    position: absolute;
-    top: calc(50% - 30px);
-    right: 20px;
-
-    background-color: aqua;
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.update-button {
-    top: calc(50% + 10px);
-}
