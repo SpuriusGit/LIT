@@ -2,6 +2,7 @@ import './App.css';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState } from 'react';
 import List from './components/List';
+import SortSelect from './components/SortSelect';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,11 +43,6 @@ function App() {
     setNoFilteredPosts([...noFilteredPosts.filter((post) =>  post.id !== id)]);
   }
 
-  const sortPosts =  (event) => {
-    event.preventDefault();
-    dispatch({type:'SORT_POSTS'});
-  }
-
   const handleSearch = (event) => {
     setSearch(event.target.value);
     let filteredPosts = noFilteredPosts.filter((post) =>  post.title.toLowerCase().includes(event.target.value.toLowerCase()) || post.body.toLowerCase().includes(event.target.value.toLowerCase()));
@@ -61,7 +57,7 @@ function App() {
         <input type={'text'} value={post.body}  onChange={(event)=> setPost({...post, body: event.target.value})} placeholder="description"/>
         <input type={'text'} value={search}  onChange={handleSearch} placeholder="search..."/>
         <button onClick={addpost}>add post</button>
-        <button onClick={sortPosts}>sort by title</button>
+        <SortSelect />
       </form>
       <List 
         posts={posts} 
