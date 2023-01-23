@@ -2,10 +2,9 @@ import React from 'react'
 import './list.css';
 
 const ListItem = ({id, title, body, onDelete}) => {
-    const handleDelete = () => {
-        onDelete(id);
-        console.log(id)
-      };
+  const handleDelete = () => {
+      onDelete(id);
+  };
       
   return (
     <li key={id} id={id} className='list-item'>
